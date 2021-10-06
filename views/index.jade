@@ -2,4 +2,25 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Bem-Vindo ao #{title}. Cadastre-se para fazer parte da nossa rede.
+  form(action="/", method="post" id="cadastroCliente")
+    label(for="nome") Nome  
+    input(type="text" id="nome" name="nome")
+    br
+    br
+    label(for="cpf") CPF
+    input(type="text" id="cpf" name="cpf")
+    br
+    br
+    label(for="celular") Celular
+    input(type="text" id="celular" name="celular") 
+    br
+    #categoria
+      p Tipo de Trabalho: 
+      input(type="checkbox" name="categoria" id="categoria1" value="eletricista")
+      label(for="categoria1") Eletricista 
+      input(type="checkbox" name="categoria" id="categoria2" value="pedreiro")
+      label(for="categoria2") Pedreiro
+    br
+
+    button(type="submit") Cadastrar
